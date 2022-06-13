@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B29967162851EF20005DB729 /* NotinoBaseVisualApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29967152851EF20005DB729 /* NotinoBaseVisualApp.swift */; };
+		B29967182851EF20005DB729 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29967172851EF20005DB729 /* ContentView.swift */; };
 		B299671A2851EF23005DB729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29967192851EF23005DB729 /* Assets.xcassets */; };
+		B29967332852A172005DB729 /* CatalogProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29967322852A172005DB729 /* CatalogProduct.swift */; };
+		B29967362852A2F9005DB729 /* MockProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29967352852A2F9005DB729 /* MockProducts.swift */; };
+		B29967392852B5A1005DB729 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29967382852B5A1005DB729 /* BoardViewModel.swift */; };
+		B2A3C4AD2857868E0047FB08 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C4AB2857868E0047FB08 /* Strings.swift */; };
+		B2A3C4AE2857868E0047FB08 /* BaseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C4AC2857868E0047FB08 /* BaseImage.swift */; };
 		CA8CE195C4E37BB364B76EC6 /* Pods_NotinoBaseVisual.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0009E0162337713978614C /* Pods_NotinoBaseVisual.framework */; };
 /* End PBXBuildFile section */
 
@@ -17,7 +23,13 @@
 		8F0009E0162337713978614C /* Pods_NotinoBaseVisual.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotinoBaseVisual.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29967122851EF20005DB729 /* NotinoBaseVisual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotinoBaseVisual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29967152851EF20005DB729 /* NotinoBaseVisualApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotinoBaseVisualApp.swift; sourceTree = "<group>"; };
+		B29967172851EF20005DB729 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29967192851EF23005DB729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B29967322852A172005DB729 /* CatalogProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProduct.swift; sourceTree = "<group>"; };
+		B29967352852A2F9005DB729 /* MockProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProducts.swift; sourceTree = "<group>"; };
+		B29967382852B5A1005DB729 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		B2A3C4AB2857868E0047FB08 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		B2A3C4AC2857868E0047FB08 /* BaseImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImage.swift; sourceTree = "<group>"; };
 		F09D4B59B102E771FBD1F312 /* Pods-NotinoBaseVisual.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotinoBaseVisual.release.xcconfig"; path = "Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				B29967152851EF20005DB729 /* NotinoBaseVisualApp.swift */,
+				B29967312852A15D005DB729 /* View */,
+				B29967302852A156005DB729 /* Model */,
+				B29967372852B564005DB729 /* ViewModel */,
+				B29967342852A2E0005DB729 /* Mock */,
 				B299672528527B94005DB729 /* Resources */,
 			);
 			path = NotinoBaseVisual;
@@ -73,8 +89,42 @@
 			isa = PBXGroup;
 			children = (
 				B29967192851EF23005DB729 /* Assets.xcassets */,
+				B2A3C4AC2857868E0047FB08 /* BaseImage.swift */,
+				B2A3C4AB2857868E0047FB08 /* Strings.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B29967302852A156005DB729 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B29967322852A172005DB729 /* CatalogProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B29967312852A15D005DB729 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B29967172851EF20005DB729 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B29967342852A2E0005DB729 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B29967352852A2F9005DB729 /* MockProducts.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		B29967372852B564005DB729 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B29967382852B5A1005DB729 /* BoardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CB45DBA2D6E7638093D42C64 /* Frameworks */ = {
@@ -198,7 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29967182851EF20005DB729 /* ContentView.swift in Sources */,
+				B29967332852A172005DB729 /* CatalogProduct.swift in Sources */,
 				B29967162851EF20005DB729 /* NotinoBaseVisualApp.swift in Sources */,
+				B29967362852A2F9005DB729 /* MockProducts.swift in Sources */,
+				B2A3C4AE2857868E0047FB08 /* BaseImage.swift in Sources */,
+				B2A3C4AD2857868E0047FB08 /* Strings.swift in Sources */,
+				B29967392852B5A1005DB729 /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
