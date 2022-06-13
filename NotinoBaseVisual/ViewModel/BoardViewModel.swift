@@ -23,6 +23,21 @@ class BoardViewModel: ObservableObject {
             }
         }
     }
+    
+    func markFavourite(product: CatalogProduct) {
+        favouriteProductsbyId = PersistentStore.markFavourite(product: product)
+    }
+    
+    func retrieveAllFavouriteProducts() {
+        if let favIds = PersistentStore.retrieveAllFavouriteProducts() {
+            favouriteProductsbyId = favIds
+        }
+    }
+    
+    func isFavourite(product: CatalogProduct) -> Bool {
+        return PersistentStore.retrieveFavouriteIndex(from: favouriteProductsbyId,
+                                                      productById: product.productId) != nil
+    }
 }
 
 struct CatalogProductsResponse: Decodable {
