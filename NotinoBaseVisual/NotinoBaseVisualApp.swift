@@ -20,6 +20,7 @@ struct NotinoBaseVisualApp: App {
         WindowGroup {
             ContentView(viewModel: viewModel)
                 .onAppear {
+                    viewModel.retrieveAllFavouriteProducts()
                     viewModel.fetchData()
             }
         }

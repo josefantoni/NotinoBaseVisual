@@ -11,4 +11,10 @@ struct Strings {
     // urls
     static let productImagePrefixUrl = "https://i.notino.com/detail_zoom/"
     static let productsUrl = "https://my-json-server.typicode.com/cernfr1993/notino-assignment/db"
+    
+    // strings
+    static let addToCart = "DO KOŠÍKU"
+    
+    // user defaults keys
+    static let favourite = "favourite"
 }
