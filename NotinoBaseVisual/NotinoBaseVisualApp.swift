@@ -10,11 +10,18 @@ import Combine
 
 @main
 struct NotinoBaseVisualApp: App {
+    @ObservedObject var viewModel: BoardViewModel
+
     init() {
+        viewModel = BoardViewModel()
     }
     
     var body: some Scene {
         WindowGroup {
+            ContentView(viewModel: viewModel)
+                .onAppear {
+                    viewModel.fetchData()
+            }
         }
     }
 }
