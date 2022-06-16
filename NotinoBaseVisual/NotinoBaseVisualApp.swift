@@ -10,11 +10,7 @@ import Combine
 
 @main
 struct NotinoBaseVisualApp: App {
-    @ObservedObject var viewModel: BoardViewModel
-
-    init() {
-        viewModel = BoardViewModel()
-    }
+    @StateObject var viewModel: BoardViewModel = BoardViewModel()
     
     var body: some Scene {
         WindowGroup {

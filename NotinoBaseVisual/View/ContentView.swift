@@ -20,17 +20,22 @@ struct ContentView: View {
     var body: some View {
         // Use geometry to calculate width of the products based on itemPerRow
         GeometryReader { geometry in
-            ScrollView {
-                // Iterate products and fillup in the VStack
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(0..<viewModel.products.count, id: \.self) { i in
-                        // Process the first index of each row
-                        if i % Int(itemPerRow) == 0 {
-                            // Get view
-                            buildView(rowIndex: i, geometry: geometry)
+            NavigationView {
+                ScrollView {
+                    Divider()
+                    // Iterate products and fillup in the VStack
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(0..<viewModel.products.count, id: \.self) { i in
+                            // Process the first index of each row
+                            if i % Int(itemPerRow) == 0 {
+                                // Get view
+                                buildView(rowIndex: i, geometry: geometry)
+                            }
                         }
                     }
                 }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(Strings.appTitle)
             }
         }
     }

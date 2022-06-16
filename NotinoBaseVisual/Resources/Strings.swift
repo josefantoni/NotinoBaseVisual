@@ -14,6 +14,7 @@ struct Strings {
     
     // strings
     static let addToCart = "DO KOŠÍKU"
+    static let appTitle = "Notino"
     
     // user defaults keys
     static let favourite = "favourite"
