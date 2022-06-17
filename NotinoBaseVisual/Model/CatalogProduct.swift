@@ -13,7 +13,8 @@ struct CatalogProductsResponse: Codable {
    enum CodingKeys : String, CodingKey { case catalogProducts = "vpProductByIds" }
 }
 
-struct CatalogProduct: Codable {
+struct CatalogProduct: Identifiable, Codable {
+    var id: Int { productId }
     let productId: Int
     let brand: Brand
     let annotation: String
