@@ -35,7 +35,7 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(Strings.appTitle)
+                .navigationTitle("Notino")
             }
         }
     }

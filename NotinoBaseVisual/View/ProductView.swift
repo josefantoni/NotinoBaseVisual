@@ -48,7 +48,7 @@ struct ProductView: View {
                     Button(action: {
                         // TODO: add to cart
                     }, label: {
-                        Text(Strings.addToCart) // localization in future version?
+                        Text("DO KOŠÍKU") // localization in future version?
                             .font(.system(size: 11))
                             .fontWeight(.light)
                             .padding(10)
