@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct CatalogProduct: Decodable {
+struct CatalogProductsResponse: Codable {
+   let catalogProducts : [CatalogProduct]
+
+   enum CodingKeys : String, CodingKey { case catalogProducts = "vpProductByIds" }
+}
+
+struct CatalogProduct: Codable {
     let productId: Int
     let brand: Brand
     let annotation: String
@@ -22,40 +28,35 @@ struct CatalogProduct: Decodable {
     let stockAvailability: StockAvailability
 }
 
-struct Brand: Decodable {
+struct Brand: Codable {
     let id: String
     let name: String
 }
 
-struct Price: Decodable {
+struct Price: Codable {
     let value: Int
     let currency: String
     
     var formated: String {
         var tmpCurrency = ""
         switch currency {
-        case ePrice.czk.rawValue:
+        case "CZK":
             tmpCurrency = "Kč"
-        case ePrice.euro.rawValue:
+        case "EURO":
             tmpCurrency = "Eur"
         default:
             return "?"
         }
         return "\(value) \(tmpCurrency)"
     }
-    
-    enum ePrice: String {
-        case czk = "CZK",
-             euro = "EURO"
-    }
 }
 
-struct ReviewSummary: Decodable {
+struct ReviewSummary: Codable {
     let score: Int
     let averageRating: Double
 }
 
-struct StockAvailability: Decodable {
+struct StockAvailability: Codable {
     let code: String
 }
 
