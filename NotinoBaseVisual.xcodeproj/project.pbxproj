@@ -19,12 +19,9 @@
 		B2BAB9582853CFBE0052FD7B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BAB9572853CFBE0052FD7B /* Strings.swift */; };
 		B2BAB95A2856861F0052FD7B /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BAB9592856861F0052FD7B /* PersistentStore.swift */; };
 		B2BAB95C2857623E0052FD7B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BAB95B2857623E0052FD7B /* RatingView.swift */; };
-		CA8CE195C4E37BB364B76EC6 /* Pods_NotinoBaseVisual.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0009E0162337713978614C /* Pods_NotinoBaseVisual.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		295BF65D672387FBAFCEB8A9 /* Pods-NotinoBaseVisual.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotinoBaseVisual.debug.xcconfig"; path = "Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual.debug.xcconfig"; sourceTree = "<group>"; };
-		8F0009E0162337713978614C /* Pods_NotinoBaseVisual.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotinoBaseVisual.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29967122851EF20005DB729 /* NotinoBaseVisual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotinoBaseVisual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29967152851EF20005DB729 /* NotinoBaseVisualApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotinoBaseVisualApp.swift; sourceTree = "<group>"; };
 		B29967172851EF20005DB729 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,7 +35,6 @@
 		B2BAB9572853CFBE0052FD7B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B2BAB9592856861F0052FD7B /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		B2BAB95B2857623E0052FD7B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		F09D4B59B102E771FBD1F312 /* Pods-NotinoBaseVisual.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotinoBaseVisual.release.xcconfig"; path = "Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,29 +42,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8CE195C4E37BB364B76EC6 /* Pods_NotinoBaseVisual.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		86F95DD651D724EA75093FA1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				295BF65D672387FBAFCEB8A9 /* Pods-NotinoBaseVisual.debug.xcconfig */,
-				F09D4B59B102E771FBD1F312 /* Pods-NotinoBaseVisual.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B29967092851EF20005DB729 = {
 			isa = PBXGroup;
 			children = (
 				B29967142851EF20005DB729 /* NotinoBaseVisual */,
 				B29967132851EF20005DB729 /* Products */,
-				86F95DD651D724EA75093FA1 /* Pods */,
-				CB45DBA2D6E7638093D42C64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,14 +123,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CB45DBA2D6E7638093D42C64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8F0009E0162337713978614C /* Pods_NotinoBaseVisual.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,11 +130,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B29967202851EF23005DB729 /* Build configuration list for PBXNativeTarget "NotinoBaseVisual" */;
 			buildPhases = (
-				1D22F2C7CE92D0D66FCE8EAE /* [CP] Check Pods Manifest.lock */,
 				B299670E2851EF20005DB729 /* Sources */,
 				B299670F2851EF20005DB729 /* Frameworks */,
 				B29967102851EF20005DB729 /* Resources */,
-				40DF3134389FB21CF662008E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,48 +186,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1D22F2C7CE92D0D66FCE8EAE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NotinoBaseVisual-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40DF3134389FB21CF662008E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NotinoBaseVisual/Pods-NotinoBaseVisual-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B299670E2851EF20005DB729 /* Sources */ = {
@@ -393,7 +325,6 @@
 		};
 		B29967212851EF23005DB729 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 295BF65D672387FBAFCEB8A9 /* Pods-NotinoBaseVisual.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -423,7 +354,6 @@
 		};
 		B29967222851EF23005DB729 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F09D4B59B102E771FBD1F312 /* Pods-NotinoBaseVisual.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
