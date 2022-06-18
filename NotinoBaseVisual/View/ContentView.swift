@@ -29,6 +29,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Notino")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
