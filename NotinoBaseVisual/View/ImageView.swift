@@ -11,46 +11,24 @@ import UIKit
 import SwiftUI
 
 struct ImageView: View {
-    private var url: URL
-    private var placeHolder: Image
-    @ObservedObject var binder = ImageBinder()
-    
-    init(url: URL, placeHolder: Image) {
-        self.url = url
-        self.placeHolder = placeHolder
-        self.binder.load(url: self.url)
-        
-    }
+    var imageUrl: URL
+
     var body: some View {
         VStack {
-            if let image = binder.image {
-                let width = UIScreen.main.bounds.width/2 // only 2 items are visible on screen
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: width, height: width, alignment: .top)
-            } else {
-                placeHolder
+            AsyncImage(url: imageUrl) { imagePhase in
+                switch imagePhase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    let width = UIScreen.main.bounds.width/2 // only 2 items are visible on screen
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: width, height: width, alignment: .top)
+                default:
+                    Image(systemName: "questionmark")
+                }
             }
         }
-        .onDisappear { self.binder.cancel() }
-    }
-}
-
-class ImageBinder: ObservableObject {
-    private var bag: AnyCancellable?
-    
-    @Published private(set) var image: UIImage?
-    
-    func load(url: URL) {
-        bag = URLSession.shared
-            .dataTaskPublisher(for: url)
-            .map { UIImage(data: $0.data) }
-            .replaceError(with: nil)
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.image, on: self)
-    }
-    func cancel() {
-        bag?.cancel()
     }
 }

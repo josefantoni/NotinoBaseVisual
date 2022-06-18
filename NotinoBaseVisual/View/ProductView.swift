@@ -23,8 +23,7 @@ struct ProductView: View {
         ZStack {
             VStack {
                 if let url = URL(string: Strings.productImagePrefixUrl+catalogProduct.imageUrl) {
-                    ImageView(url: url,
-                              placeHolder: Image(systemName: "note"))
+                    ImageView(imageUrl: url)
                         .padding(.top, 15)
                 }
                 VStack(spacing: 6) {
