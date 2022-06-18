@@ -13,11 +13,10 @@ struct ProductView: View {
     @State private var isFavourite: Bool
     
     init(catalogProduct: CatalogProduct,
-         viewModel: BoardViewModel,
-         isFavourite: Bool) {
+         viewModel: BoardViewModel) {
         self.catalogProduct = catalogProduct
         self.viewModel = viewModel
-        self.isFavourite = isFavourite
+        self.isFavourite = catalogProduct.isFavourite
     }
     
     var body: some View {
@@ -82,7 +81,6 @@ struct ProductView_Previews: PreviewProvider {
     static var previews: some View {
         // adjust width value if working with Mock
         ProductView(catalogProduct: MockProducts.p1,
-                    viewModel: BoardViewModel(),
-                    isFavourite: false)
+                    viewModel: BoardViewModel())
     }
 }

@@ -12,8 +12,11 @@ class BoardViewModel: ObservableObject {
     private var bag = Set<AnyCancellable>()
 
     @Published var products: [CatalogProduct] = []
-    @Published var favouriteProductsbyId: [Int] = []
 
+    init() {
+        fetchData()
+    }
+    
     func fetchData() {
         guard let targetUrl = URL(string: Strings.productsUrl) else {
             print("Error not a valid URL")
@@ -34,7 +37,13 @@ class BoardViewModel: ObservableObject {
                     print("Error occured while downloading a new catalog: \(error)")
                 }
             } receiveValue: { [weak self] receivedProducts in
-                self?.products = receivedProducts.catalogProducts
+                guard let self = self else { return }
+                let allFavourite = PersistentStore.retrieveAllFavouriteProducts()
+                self.products = receivedProducts.catalogProducts.map({ catalogProduct -> CatalogProduct in
+                    var p = catalogProduct
+                    p.isFavourite = allFavourite.contains(where: { $0 == p.productId })
+                    return p
+                })
             }
             .store(in: &bag)
     }
@@ -48,17 +57,6 @@ class BoardViewModel: ObservableObject {
     }
     
     func markFavourite(product: CatalogProduct) {
-        favouriteProductsbyId = PersistentStore.markFavourite(product: product)
-    }
-    
-    func retrieveAllFavouriteProducts() {
-        if let favIds = PersistentStore.retrieveAllFavouriteProducts() {
-            favouriteProductsbyId = favIds
-        }
-    }
-    
-    func isFavourite(product: CatalogProduct) -> Bool {
-        return PersistentStore.retrieveFavouriteIndex(from: favouriteProductsbyId,
-                                                      productById: product.productId) != nil
+        PersistentStore.markFavourite(product: product)
     }
 }

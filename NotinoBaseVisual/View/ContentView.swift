@@ -21,8 +21,7 @@ struct ContentView: View {
                 LazyVGrid(columns: items) {
                     ForEach(viewModel.products) { product in
                         ProductView(catalogProduct: product,
-                                    viewModel: viewModel,
-                                    isFavourite: viewModel.isFavourite(product: product))
+                                    viewModel: viewModel)
                     }
                 }
             }

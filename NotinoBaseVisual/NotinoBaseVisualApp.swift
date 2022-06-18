@@ -15,10 +15,6 @@ struct NotinoBaseVisualApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(viewModel: viewModel)
-                .onAppear {
-                    viewModel.retrieveAllFavouriteProducts()
-                    viewModel.fetchData()
-            }
         }
     }
 }
