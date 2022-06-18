@@ -22,27 +22,30 @@ struct ProductView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 5) {
+            VStack {
                 if let url = URL(string: Strings.productImagePrefixUrl+catalogProduct.imageUrl) {
                     ImageView(url: url,
                               placeHolder: Image(systemName: "note"))
+                        .padding(.top, 15)
                 }
-                Text(catalogProduct.brand.name)
-                    .font(.system(size: 15))
-                    .fontWeight(.light)
-                Text(catalogProduct.name)
-                    .font(.system(size: 15))
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                Text(catalogProduct.annotation)
-                    .font(.system(size: 12))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 5)
-                Text(catalogProduct.price.formated)
-                    .font(.system(size: 15))
-                    .fontWeight(.bold)
-                RatingView(catalogProduct: catalogProduct)
-                    .padding(.bottom, 12)
+                VStack(spacing: 6) {
+                    Text(catalogProduct.brand.name)
+                        .font(.system(size: 15))
+                        .fontWeight(.light)
+                    Text(catalogProduct.name)
+                        .font(.system(size: 15))
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                    Text(catalogProduct.annotation)
+                        .font(.system(size: 12))
+                        .multilineTextAlignment(.center)
+                    RatingView(catalogProduct: catalogProduct)
+                    Text(catalogProduct.price.formated)
+                        .font(.system(size: 15))
+                        .fontWeight(.bold)
+                }
+                .padding(.horizontal, 6)
+                .padding(.bottom, 8)
                 
                 Button(action: {
                     // TODO: add to cart
@@ -57,19 +60,20 @@ struct ProductView: View {
                 .border(.black, width: 0.6)
             }
             
-            VStack (alignment: .trailing){
-                HStack (alignment: .top){
-                    Spacer()
-                    Button(action: {
-                        viewModel.markFavourite(product: catalogProduct)
-                    }, label: {
-                        Image(baseImage: isFavourite ? .heartFull : .heartEmpty)
-                            .frame(width: 40,
-                                   height: 40)
-                    })
-                }
-                Spacer()
-            }
+            VStack {
+                Button(action: {
+                    isFavourite.toggle()
+                    viewModel.markFavourite(product: catalogProduct)
+                }, label: {
+                    Image(baseImage: isFavourite ? .heartFull : .heartEmpty)
+                        .frame(width: 40,
+                               height: 40)
+                        .padding(.horizontal, 5)
+                })
+            }.frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .topTrailing)
         }
     }
 }
