@@ -15,18 +15,20 @@ struct ImageView: View {
 
     var body: some View {
         VStack {
+            let width = UIScreen.main.bounds.width/2 // only 2 items are visible on screen
             AsyncImage(url: imageUrl) { imagePhase in
                 switch imagePhase {
                 case .empty:
                     ProgressView()
+                        .frame(width: width, height: width, alignment: .top)
                 case .success(let image):
-                    let width = UIScreen.main.bounds.width/2 // only 2 items are visible on screen
                     image
                         .resizable()
                         .scaledToFit()
                         .frame(width: width, height: width, alignment: .top)
                 default:
                     Image(systemName: "questionmark")
+                        .frame(width: width, height: width, alignment: .top)
                 }
             }
         }
